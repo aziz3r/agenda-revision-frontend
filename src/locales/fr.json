@@ -1,0 +1,8 @@
+{
+  "examens": {
+    "title": "Liste des Examens",
+    "name": "Nom",
+    "date": "Date",
+    "difficulty": "Difficulté"
+  }
+}

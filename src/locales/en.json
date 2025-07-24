@@ -1,8 +1,8 @@
 {
-  "examens": {
-    "title": "Exam List",
-    "name": "Name",
-    "date": "Date",
-    "difficulty": "Difficulty"
-  }
+  "title": "Revision Planner",
+  "add_exam": "Add exam",
+  "add_subject": "Add subject",
+  "progress": "Progress",
+  "calendar": "Calendar",
+  "difficulty": "Difficulty"
 }

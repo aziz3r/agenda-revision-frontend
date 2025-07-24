@@ -1,8 +1,8 @@
 {
-  "examens": {
-    "title": "Liste des Examens",
-    "name": "Nom",
-    "date": "Date",
-    "difficulty": "Difficulté"
-  }
+  "title": "Agenda de Révision",
+  "add_exam": "Ajouter un examen",
+  "add_subject": "Ajouter une matière",
+  "progress": "Avancement",
+  "calendar": "Calendrier",
+  "difficulty": "Difficulté"
 }

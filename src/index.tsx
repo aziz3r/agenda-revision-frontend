@@ -1,6 +1,8 @@
-import './locales/i18n'; // Obligatoire
+// src/index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './locales/i18n'; 
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+root.render(<App />);

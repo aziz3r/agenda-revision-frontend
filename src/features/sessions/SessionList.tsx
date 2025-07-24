@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadSessions } from './sessionSlice';
-import { RootState } from '../../redux/store';
+import { RootState } from '../../redux/store.ts';
 
 const SessionList: React.FC = () => {
   const dispatch = useDispatch();

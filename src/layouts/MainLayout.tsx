@@ -1,6 +1,6 @@
 // src/layouts/MainLayout.tsx
 import React from 'react';
-import Navbar from '../components/Navbar/Navbar';
+import Navbar from '../components/Navbar/Navbar.tsx';
 
 interface Props {
   children: React.ReactNode;

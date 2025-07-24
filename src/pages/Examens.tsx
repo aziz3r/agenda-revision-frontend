@@ -1,30 +1,18 @@
-import { useEffect, useState } from 'react';
-import api from '../api/axios.tsx'; // veille à ce que ce fichier existe
-import { Examen } from '../types/Examen';
+// src/pages/Examens.tsx
+import React from 'react';
+import MainLayout from '../layouts/MainLayout';
+import ExamenList from '../features/examens/ExamenList';
+import { useTranslation } from 'react-i18next';
 
-const Examens = () => {
-  const [examens, setExamens] = useState<Examen[]>([]);
-
-  useEffect(() => {
-    api
-      .get('/exams?populate=*')
-      .then((res) => setExamens(res.data.data))
-      .catch((err) => console.error(err));
-  }, []);
+const Examens: React.FC = () => {
+  const { t } = useTranslation();
 
   return (
-    <div>
-      <h1>Liste des Examens</h1>
-      <ul>
-        {examens.map((examen) => (
-          <li key={examen.id}>
-            {examen.attributes.titre} – {examen.attributes.date} – {examen.attributes.difficulte}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <MainLayout>
+      <h1>{t('add_exam')}</h1>
+      <ExamenList />
+    </MainLayout>
   );
 };
 
 export default Examens;
-

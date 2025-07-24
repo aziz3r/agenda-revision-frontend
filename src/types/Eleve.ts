@@ -1,3 +1,4 @@
+// src/types/Eleve.ts
 import { Examen } from './Examen';
 
 export interface Eleve {

@@ -1,22 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Examens from './pages/Examens';
-import AddExamen from './pages/AddExamen';
-import Navbar from './components/Navbar/Navbar';
+// src/App.tsx
+import React from 'react';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
-  return (
-    <Router>
-
-      <Routes>
-        {/* Redirection de la racine vers /examens */}
-        <Route path="/" element={<Navigate to="/examens" replace />} />
-
-        {/* Pages principales */}
-        <Route path="/examens" element={<Examens />} />
-        <Route path="/ajouter" element={<AddExamen />} />
-      </Routes>
-    </Router>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

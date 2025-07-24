@@ -1,6 +1,9 @@
+// src/types/Session.ts
+import { Examen } from './Examen';
+
 export interface Session {
   id: number;
-  date_debut: string;
-  date_fin: string;
-  objectif: string;
+  date: string;      // format ISO
+  duree: number;     // en minutes
+  examen?: Examen;
 }

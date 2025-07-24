@@ -1,4 +1,5 @@
 import React from 'react';
+import './ExamCard.css';
 import { Examen } from '../types/Examen';
 
 interface Props {

@@ -1,22 +1,34 @@
-// src/validators/examenValidator.ts
-export const validateExamen = (examen: {
-  titre: string;
-  date: string;
-  type: string;
-}) => {
-  const errors: { [key: string]: string } = {};
+// src/components/Navbar/Navbar.tsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-  if (!examen.titre || examen.titre.trim().length < 2) {
-    errors.titre = 'Le titre est obligatoire et doit contenir au moins 2 caractères.';
-  }
+const Navbar: React.FC = () => {
+  const { t, i18n } = useTranslation();
 
-  if (!examen.date) {
-    errors.date = 'La date est obligatoire.';
-  }
+  const changeLang = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
-  if (!examen.type) {
-    errors.type = 'Le type d\'examen est obligatoire.';
-  }
-
-  return errors;
+  return (
+    <nav style={{ backgroundColor: '#1976d2', color: '#fff', padding: '10px' }}>
+      <h2>{t('title')}</h2>
+      <ul style={{ listStyle: 'none', display: 'flex', gap: '15px', padding: 0 }}>
+        <li><Link to="/" style={{ color: '#fff' }}>🏠 Dashboard</Link></li>
+        <li><Link to="/examens" style={{ color: '#fff' }}>📚 Examens</Link></li>
+        <li><Link to="/ajouter-examen" style={{ color: '#fff' }}>➕ Ajouter Examen</Link></li>
+        <li><Link to="/matieres" style={{ color: '#fff' }}>📘 Matières</Link></li>
+        <li><Link to="/ajouter-matiere" style={{ color: '#fff' }}>➕ Ajouter Matière</Link></li>
+        <li><Link to="/calendrier" style={{ color: '#fff' }}>📅 Calendrier</Link></li>
+        <li>
+          🌐
+          <button onClick={() => changeLang('fr')}>🇫🇷</button>
+          <button onClick={() => changeLang('en')}>🇬🇧</button>
+        </li>
+      </ul>
+    </nav>
+  );
 };
+
+export default Navbar;
+

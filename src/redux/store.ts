@@ -1,8 +1,11 @@
 // src/redux/store.ts
+
 import { configureStore } from '@reduxjs/toolkit';
-import examenReducer from './slices/examenSlice.ts';
-import matiereReducer from './slices/matiereSlice.ts';
-import sessionReducer from '../features/sessions/sessionSlice.ts';
+
+// ✅ Corrige les chemins selon l’arborescence actuelle
+import examenReducer from '../features/examens/ExamenSlice';
+import matiereReducer from '../features/matieres/matiereSlice';
+import sessionReducer from '../features/sessions/sessionSlice';
 import eleveReducer from '../features/eleves/eleveSlice';
 
 export const store = configureStore({
@@ -14,6 +17,5 @@ export const store = configureStore({
   },
 });
 
-// Type de l’état global
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

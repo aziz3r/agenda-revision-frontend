@@ -42,3 +42,4 @@ export const {
   useDeleteExamenMutation,
   useUpdateExamenMutation,
 } = api;
+

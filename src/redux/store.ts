@@ -1,12 +1,9 @@
-// src/redux/store.ts
-
 import { configureStore } from '@reduxjs/toolkit';
-
-// ✅ Corrige les chemins selon l’arborescence actuelle
 import examenReducer from '../features/examens/ExamenSlice';
 import matiereReducer from '../features/matieres/matiereSlice';
 import sessionReducer from '../features/sessions/sessionSlice';
 import eleveReducer from '../features/eleves/eleveSlice';
+import { api } from './api'; // <- ajout
 
 export const store = configureStore({
   reducer: {
@@ -14,7 +11,10 @@ export const store = configureStore({
     matieres: matiereReducer,
     sessions: sessionReducer,
     eleves: eleveReducer,
+    [api.reducerPath]: api.reducer, // <- ajout
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(api.middleware), // <- ajout
 });
 
 export type RootState = ReturnType<typeof store.getState>;
